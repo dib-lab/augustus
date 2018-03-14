@@ -9,7 +9,7 @@ all:
 	cd filterBam; make CXX=$(BAMTOOLS_CXX) CC=$(BAMTOOLS_CC);
 	cd homGeneMapping; make CXX=$(BAMTOOLS_CXX) CC=$(BAMTOOLS_CC);
 	cd joingenes; make CXX=$(BAMTOOLS_CXX) CC=$(BAMTOOLS_CC);
-	cd aln2wig; make CXX=$(BAMTOOLS_CXX) CC=$(BAMTOOLS_CC);
+	cd aln2wig; make clean; make CXX=$(BAMTOOLS_CXX) CC=$(BAMTOOLS_CC);
 clean:
 	cd bam2hints; make clean;
 	cd compileSpliceCands; make clean;
