@@ -19,6 +19,7 @@ CFLAGS = -Wall -g -p -O0
 # $<: .c file of target. 
 bam2hints : $(OBJECTS)
 	$(CXX) $(CFLAGS) $(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS) -c $< -o $@ -I$(INCLUDES)
+	mkdir -p ../../bin
 	cp bam2hints ../../bin
 
 all:$(OBJECTS) # Compiles each foo.cc into foo.o

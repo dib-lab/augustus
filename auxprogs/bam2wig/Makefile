@@ -18,7 +18,6 @@ INCLUDES=-I$(SAMTOOLS) -I. -I$(HTSLIB) -I$(BCFTOOLS) -I$(TABIX)
 VPATH=$(SAMTOOLS)
 LIBS=$(SAMTOOLS)/libbam.a $(HTSLIB)/libhts.a -lcurses -lm -lz -lpthread
 CFLAGS= -g -Wall -O2 $(INCLUDES)
-CC=gcc
 
 $(PROGRAM) : bam2wig.o bam_index.o
 	$(CC) $(CFLAGS) $^ -o $@ $(LIBS)
