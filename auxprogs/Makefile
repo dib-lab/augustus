@@ -4,11 +4,12 @@
 # Last modified on: 16-October-2016 by Katharina Hoff (katharina.hoff@gmail.com)
 
 all:
-	cd bam2hints; make CXX=$(BAMTOOLS_CXX) CC=$(BAMTOOLS_CC) BAMTOOLS=$(BAMTOOLS);
+	cd bam2hints; make CXX=$(BAMTOOLS_CXX) CC=$(BAMTOOLS_CC);
 	cd compileSpliceCands; make CXX=$(BAMTOOLS_CXX) CC=$(BAMTOOLS_CC);
-	cd filterBam; make CXX=$(BAMTOOLS_CXX) CC=$(BAMTOOLS_CC) BAMTOOLS=$(BAMTOOLS);
-    cd homGeneMapping; make CXX=$(BAMTOOLS_CXX) CC=$(BAMTOOLS_CC);
+	cd filterBam; make CXX=$(BAMTOOLS_CXX) CC=$(BAMTOOLS_CC);
+	cd homGeneMapping; make CXX=$(BAMTOOLS_CXX) CC=$(BAMTOOLS_CC);
 	cd joingenes; make CXX=$(BAMTOOLS_CXX) CC=$(BAMTOOLS_CC);
+	cd aln2wig; make CXX=$(BAMTOOLS_CXX) CC=$(BAMTOOLS_CC);
 clean:
 	cd bam2hints; make clean;
 	cd compileSpliceCands; make clean;
