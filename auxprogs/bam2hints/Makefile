@@ -8,18 +8,17 @@
 #	Last modified:	23-October-2017 by Jon Palmer
 
 # Variable definition
-BAMTOOLS=/usr/local/bamtools
-INCLUDES = $(BAMTOOLS)/include
-LIBS = $(BAMTOOLS)/lib/libbamtools.a -lz
+INCLUDES =  ${PREFIX}/include/bamtools/
+LIBS = ${PREFIX}/lib/libbamtools.a -lz
 SOURCES = bam2hints.cc 
 OBJECTS = $(SOURCES:.cc=.o)
-CFLAGS = -Wall -O0 -g -ggdb # -g -p
+CFLAGS = -Wall -g -p -O0
 
 # Recipe(s)
 # $@: full target name of current target. 
 # $<: .c file of target. 
 bam2hints : $(OBJECTS)
-	$(CXX) $(CFLAGS) -o$@ $(OBJECTS) $(LIBS)
+	$(CXX) $(CFLAGS) $(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS) -c $< -o $@ -I$(INCLUDES)
 	cp bam2hints ../../bin
 
 all:$(OBJECTS) # Compiles each foo.cc into foo.o

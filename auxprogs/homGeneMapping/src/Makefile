@@ -27,7 +27,8 @@ all: homGeneMapping
 	$(CXX) -c $(CFLAGS) -o $@ $< $(INCLS)
 
 homGeneMapping: main.cc $(OBJS)
-	 $(CXX) $(CFLAGS) -o $@ $^ $(INCLS)
+	$(CXX) $(CFLAGS) -o $@ $^ $(INCLS)
+	mkdir -p ../bin
 	mv homGeneMapping ../bin/
 	cp ../bin/homGeneMapping ../../../bin/homGeneMapping
 clean:	

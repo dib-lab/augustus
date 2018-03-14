@@ -1,0 +1,5 @@
+**/*.swp
+src/genbank.o
+src/pp_hitseq.o
+src/pp_profile.o
+src/properties.o
